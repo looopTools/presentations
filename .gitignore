@@ -1,0 +1,6 @@
+*~
+*.el
+*.tex
+*.bbl
+*.pdf
+.DS_Store

@@ -1,0 +1,12 @@
+#+TITLE: Updating your C++ Knowledge 
+#+AUTHOR: Lars Nielsen
+
+#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil toc:nil title:nil date:nil
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [table,svgnames,aspectratio=169]
+#+latex_header: \input{preamble}
+#+latex_header: \input{lstsettings}
+
+* Test
