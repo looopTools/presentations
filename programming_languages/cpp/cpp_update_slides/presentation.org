@@ -9,4 +9,209 @@
 #+latex_header: \input{preamble}
 #+latex_header: \input{lstsettings}
 
-* Test
+#+latex: \maketitle 
+
+* Agenda
+
+  - Prerequisites 
+  - Why are we looking at this? 
+  - Using Collections
+  - for-loops
+  - const 
+  - auto
+
+* Prerequisites  
+
+ - Basic Under standing of Imperative and OO Programming 
+ - Understanding parse by reference 
+ - Willing to update your knowledge 
+
+* Why are we looking at this? 
+  
+  - A lot has happened since 99
+    - Like do not use pointers unless you have to 
+  - C++ is not outdated (anymore) 
+  - C++ can be very powerful
+
+
+* Using Collections 
+
+  - Vector
+  - Maps 
+  - Queue
+
+* For loops 
+
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+    
+#+BEGIN_SRC C++
+int col[5];
+ 
+col[0] = 1; 
+col[1] = 2;
+col[2] = 3; 
+col[3] = 4; 
+col[4] = 5;
+
+int i; 
+
+std::cout << "["
+for (i = 0; i < 5; ++i)
+{
+   std::cout << col[i];
+   if (i ==  4)
+   {
+       std::cout << "]\n"; 
+   }
+   else
+   {
+       std::cout << ", "; 
+   }
+}
+#+END_SRC
+
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+* For loops 
+
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+#+BEGIN_SRC C++
+int col[5];
+ 
+col[0] = 1; 
+col[1] = 2;
+col[2] = 3; 
+col[3] = 4; 
+col[4] = 5;
+
+int i; 
+
+std::cout << "["
+for (i = 0; i < 5; ++i)
+{
+   std::cout << col[i];
+   if (i ==  4)
+   {
+       std::cout << "]\n"; 
+   }
+   else
+   {
+       std::cout << ", "; 
+   }
+}
+#+END_SRC
+    
+
+
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+#+BEGIN_SRC C++
+
+std::array<int, 5> col = {1, 2, 3, 4, 5}; 
+std::cout << "["
+for (int i = 0; i < 5; ++i)
+{
+   std::cout << col[i];
+   if (i ==  4)
+   {
+       std::cout << "]\n"; 
+   }
+   else
+   {
+       std::cout << ", "; 
+   }
+}
+#+END_SRC 
+
+* For loops 
+
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+#+BEGIN_SRC C++
+
+std::array<int, 5> col = {1, 2, 3, 4, 5}; 
+std::cout << "["
+for (int i = 0; i < 5; ++i)
+{
+   std::cout << col[i];
+   if (i ==  4)
+   {
+       std::cout << "]\n"; 
+   }
+   else
+   {
+       std::cout << ", "; 
+   }
+}
+#+END_SRC 
+    
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+#+BEGIN_SRC C++
+
+std::array<int, 5> col = {1, 2, 3, 4, 5}; 
+std::cout << "["
+auto it = col.begin()
+for (; it < col.end() - 1; ++it)
+{
+    std::cout << (*it) << ", "; 
+}
+std::cout << (*it) << "]\n"; 
+#+END_SRC 
+
+
+* For loops 
+
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+#+BEGIN_SRC C++
+
+std::array<int, 5> col = {1, 2, 3, 4, 5}; 
+std::cout << "["
+auto it = col.begin()
+for (; it < col.end() - 1; ++it)
+{
+    std::cout << (*it) << ", "; 
+}
+std::cout << (*it) << "]\n"; 
+#+END_SRC 
+
+    
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+Let us say we do not need the comma
+
+#+BEGIN_SRC C++
+
+std::array<int, 5> col = {1, 2, 3, 4, 5}; 
+std::cout << "[";
+
+for (const auto elm : col)
+{
+    std::cout << elm << " "; 
+}
+
+std::cout << "]\n"; 
+#+END_SRC 
